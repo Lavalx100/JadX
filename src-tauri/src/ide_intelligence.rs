@@ -1686,10 +1686,11 @@ mod tests {
     }
 
     #[test]
-    fn profile_is_sourced_and_guidance_is_compact() {
+    fn profile_is_generic_and_guidance_is_compact() {
         let p: Value = serde_json::from_str(PROFILE).unwrap();
-        assert!(p["sources"].as_array().unwrap().len() >= 10);
-        assert!(mode_guidance().contains("complexity"));
+        assert_eq!(p["name"], "Engineering Principles");
+        assert!(p["sources"].as_array().unwrap().is_empty());
+        assert!(mode_guidance().contains("smallest sufficient change"));
         assert!(mode_guidance().len() < 3000);
     }
     #[test]
@@ -1783,7 +1784,7 @@ mod tests {
     #[test]
     fn rejects_secret_edits_and_supports_new_test_files() {
         let d = tempfile::tempdir().unwrap();
-        std::fs::write(d.path().join("a.py"), "password = 'x'\n").unwrap();
+        std::fs::write(d.path().join("a.py"), "password = 'fixture'\n").unwrap();
         let s = read_source(d.path(), "a.py").unwrap();
         let snapshots = HashMap::from([("a.py".into(), s)]);
         let edit = ModelEdit {

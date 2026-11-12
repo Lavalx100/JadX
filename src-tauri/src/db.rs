@@ -2351,24 +2351,24 @@ mod tests {
         let trades = list_market_trades(&db).expect("trades");
         assert_eq!(trades.len(), 1);
         assert_eq!(trades[0].trade_date, "2024-01-02");
-        assert_eq!(trades[0].commission, 12.5);
+        assert_eq!(trades[0].commission, 0.1);
         assert_eq!(saved.id, trades[0].id);
         let mut edited = saved.clone();
-        edited.quantity = 125.0;
-        edited.price = 305.0;
-        edited.commission = 13.25;
-        edited.trade_date = "2026-09-02".into();
-        edited.notes = "Updated position size".into();
+        edited.quantity = 11.0;
+        edited.price = 15.67;
+        edited.commission = 0.2;
+        edited.trade_date = "2024-01-03".into();
+        edited.notes = "Updated example trade".into();
         let updated = update_market_trade(&db, &edited).expect("update trade");
         assert_eq!(updated.id, saved.id);
         assert_eq!(updated.created_at, saved.created_at);
         let edited_trades = list_market_trades(&db).expect("edited trades");
         assert_eq!(edited_trades.len(), 1);
-        assert_eq!(edited_trades[0].quantity, 125.0);
-        assert_eq!(edited_trades[0].price, 305.0);
-        assert_eq!(edited_trades[0].commission, 13.25);
-        assert_eq!(edited_trades[0].trade_date, "2026-09-02");
-        assert_eq!(edited_trades[0].notes, "Updated position size");
+        assert_eq!(edited_trades[0].quantity, 11.0);
+        assert_eq!(edited_trades[0].price, 15.67);
+        assert_eq!(edited_trades[0].commission, 0.2);
+        assert_eq!(edited_trades[0].trade_date, "2024-01-03");
+        assert_eq!(edited_trades[0].notes, "Updated example trade");
         delete_market_trade(&db, &saved.id).expect("delete trade");
         assert!(list_market_trades(&db)
             .expect("trades after delete")
