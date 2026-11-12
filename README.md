@@ -34,6 +34,6 @@ Market quotes and research are fetched when requested. No user-specific market s
 
 See THIRD_PARTY_NOTICES.md and the licenses directory for notices covering bundled components.
 
-## Licensing status
+## License
 
-This private source snapshot does not yet include a project license. Add the chosen license before making the repository public or granting redistribution rights.
+JadX is licensed under the MIT License. See [LICENSE](LICENSE). Third-party components remain subject to their respective notices in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and the `licenses` directory.
