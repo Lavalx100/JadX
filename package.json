@@ -1,0 +1,39 @@
+{
+  "name": "jadx",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "build:avatar-motion": "mkdir -p src-tauri/binaries && xcrun swiftc -O src-tauri/avatar-motion.swift -o src-tauri/binaries/avatar-motion -framework CoreML -framework Foundation",
+    "tauri": "tauri",
+    "tauri:dev": "tauri dev",
+    "tauri:build": "bash scripts/build-macos-signed.sh",
+    "eval:offline": "node scripts/offline-evals.mjs",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@monaco-editor/react": "^4.7.0",
+    "@tauri-apps/api": "^2.8.0",
+    "@tauri-apps/plugin-dialog": "^2.4.0",
+    "@types/three": "^0.186.0",
+    "lucide-react": "^0.468.0",
+    "monaco-editor": "^0.57.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-markdown": "^9.0.1",
+    "remark-gfm": "^4.0.0",
+    "three": "^0.186.1"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.8.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "jsdom": "^25.0.1",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.5",
+    "vitest": "^2.1.8"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "JadX",
+  "version": "0.1.0",
+  "identifier": "com.jadx.desktop",
+  "build": {
+    "beforeDevCommand": "npm run build:avatar-motion && npm run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run build && npm run build:avatar-motion",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "JadX",
+        "width": 1440,
+        "height": 920,
+        "minWidth": 980,
+        "minHeight": 640,
+        "resizable": true,
+        "fullscreen": false,
+        "transparent": false,
+        "decorations": true
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "resources": {
+      "binaries/avatar-motion": "avatar-motion",
+      "../licenses/": "licenses/"
+    },
+    "macOS": {
+      "entitlements": "./Entitlements.plist"
+    },
+    "category": "Productivity",
+    "icon": ["icons/icon.png"],
+    "shortDescription": "A local-first AI desktop assistant",
+    "longDescription": "JadX connects a local-first AI workspace to LM Studio with streaming, tools, permissions, context management, and performance diagnostics."
+  }
+}

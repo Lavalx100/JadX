@@ -1,0 +1,24 @@
+{
+  "$schema":"vscode://schemas/color-theme",
+  "name":"JadX Engineering Principles",
+  "type":"dark",
+  "colors": {
+    "editor.background":"#141415","editor.foreground":"#eeeeee","sideBar.background":"#19191b","sideBar.foreground":"#bbbbc0",
+    "activityBar.background":"#141415","activityBar.foreground":"#c7ff9f","activityBar.activeBorder":"#00000000",
+    "activityBarBadge.background":"#c7ff9f","activityBarBadge.foreground":"#141415",
+    "titleBar.activeBackground":"#141415","titleBar.activeForeground":"#ffffff","tab.activeBackground":"#252525","tab.inactiveBackground":"#19191b",
+    "tab.activeBorderTop":"#c7ff9f","statusBar.background":"#19191b","statusBar.foreground":"#c7ff9f",
+    "panel.background":"#141415","panel.border":"#303034","focusBorder":"#c7ff9f70",
+    "button.background":"#c7ff9f","button.foreground":"#141415","button.hoverBackground":"#d9ffc0",
+    "list.activeSelectionBackground":"#c7ff9f20","list.activeSelectionForeground":"#ffffff","list.inactiveSelectionBackground":"#ffffff0d",
+    "editor.selectionBackground":"#c7ff9f25","editor.lineHighlightBackground":"#ffffff04","editorLineNumber.foreground":"#77777f",
+    "input.background":"#252525","input.border":"#38383c","input.foreground":"#ffffff","badge.background":"#c7ff9f","badge.foreground":"#141415"
+  },
+  "tokenColors":[
+    {"scope":["comment"],"settings":{"foreground":"#85858f"}},
+    {"scope":["string"],"settings":{"foreground":"#c7ff9f"}},
+    {"scope":["keyword","storage"],"settings":{"foreground":"#c1b7ff"}},
+    {"scope":["entity.name.function"],"settings":{"foreground":"#d6e4ff"}},
+    {"scope":["constant.numeric"],"settings":{"foreground":"#ffd49d"}}
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "jadx-intelligence",
+  "displayName": "JadX Intelligence Bridge",
+  "publisher": "jadx",
+  "version": "1.0.0",
+  "engines": {"vscode":"^1.95.0"},
+  "main":"./extension.js",
+  "activationEvents":["*"],
+  "contributes":{"themes":[{"label":"JadX Engineering Principles","uiTheme":"vs-dark","path":"./theme.json"}]}
+}
